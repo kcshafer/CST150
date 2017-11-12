@@ -70,6 +70,9 @@ ofstream OpenOutputFile(string fileName) {
 	//open the output file with the passed file name
 	outputFile.open(fileName);
 
+	//set the output file fill to spaces
+	outputFile << setfill(' ');
+
 	//set output file precision
 	outputFile << fixed << setprecision(1);
 

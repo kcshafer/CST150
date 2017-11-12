@@ -186,7 +186,28 @@ void houseClassType::PrintCapacityOfGarage(ofstream& outputFile) {
 // PrintYearBuilt - print the capacity of garage property to file
 //--------------------------------------------------------------------------------------------------
 void houseClassType::PrintYearBuilt(ofstream& outputFile) {
+	outputFile << this->yearBuilt << endl;
+}
 
+//--------------------------------------------------------------------------------------------------
+// PrintPrice - print the price property to file
+//--------------------------------------------------------------------------------------------------
+void houseClassType::PrintPrice(ofstream& outputFile) {
+	outputFile << this->price << endl;
+}
+
+//--------------------------------------------------------------------------------------------------
+// PrintTaxes - print the taxes property to file
+//--------------------------------------------------------------------------------------------------
+void houseClassType::PrintTaxes(ofstream& outputFile) {
+	outputFile << this->taxes << endl;
+}
+
+//--------------------------------------------------------------------------------------------------
+// PrintListingNumber - print the listingNumber property to file
+//--------------------------------------------------------------------------------------------------
+void houseClassType::PrintListingNumber(ofstream& outputFile) {
+	outputFile << this->listingNumber << endl;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -215,11 +236,43 @@ void houseClassType::PrintLocationData(ofstream& outputFile) {
 	outputFile << setfill(' ');
 
 	//output formatted values to file
-	outputFile << setw(19) << "State:" << state << endl;
-	outputFile << setw(18) << "County:" << county << endl;
-	outputFile << setw(20) << "City:"  << city << endl;
-	outputFile << setw(5) << "School District:" << schoolDistrict << endl;
-	outputFile << setw(18) << "Address: " << address << endl;
+	outputFile << setw(50) << "State:" << state << endl;
+	outputFile << setw(50) << "County:" << county << endl;
+	outputFile << setw(50) << "City:"  << city << endl;
+	outputFile << setw(50) << "School District:" << schoolDistrict << endl;
+	outputFile << setw(50) << "Address: " << address << endl;
+}
+
+//--------------------------------------------------------------------------------------------------
+// PrintRoomCounts - print the formatted room counts property to file
+//--------------------------------------------------------------------------------------------------
+void houseClassType::PrintRoomCounts(ofstream& outputFile) {
+	outputFile << "The following are the counts of the rooms" << endl;
+	outputFile << setw(25) << "Bedrooms" << this->roomCounts[0] << endl;
+	outputFile << setw(25) <<  "Bathrooms" << this->roomCounts[1] << endl;
+	outputFile << setw(25) <<  "Leisure Rooms" << this->roomCounts[2] << endl;
+}
+//--------------------------------------------------------------------------------------------------
+// PrintHouse - print the house 
+//--------------------------------------------------------------------------------------------------
+void houseClassType::PrintHouse(ofstream& outputFile) {
+	OutputDivider(outputFile, '-');
+
+	//output listing number and style
+	outputFile << setw(20) << "Listing Number:" << this->listingNumber << endl;
+	outputFile << setw(20) << "Style:" << this->style << endl;
+
+	//output formatted location information
+	this->PrintLocationData(outputFile);
+
+	//output formatted room counts
+	this->PrintRoomCounts(outputFile);
+
+	//output garage type, year built, price and taxes
+	outputFile << setw(50) << "Type of Garage:" << this->capacityOfGarage << endl;
+	outputFile << setw(50) << "Year Built:" << this->yearBuilt << endl;
+	outputFile << setw(50) << "Price:" << this->price << endl;
+	outputFile << setw(50) << "Taxes: " << this->taxes << endl;
 }
 
 // END PRINT METHODS
