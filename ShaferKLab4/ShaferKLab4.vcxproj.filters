@@ -27,6 +27,9 @@
     <ClCompile Include="houseClassType.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="realtorStructType.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileProcessing.h">
@@ -38,9 +41,15 @@
     <ClInclude Include="Standards.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="realtorStructType.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Listings.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="results.txt">
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>

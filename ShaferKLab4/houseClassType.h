@@ -42,7 +42,7 @@ class houseClassType {
 		double GetTaxes() { return taxes; }
 		int GetListingNumber() { return listingNumber; }
 
-		//GetListingNumber defintion
+		//GetListingNumber definition
 		void GetRoomCounts(double roomCounts[]);
 
 		//basic setters definition

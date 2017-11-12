@@ -4,9 +4,9 @@ Two-Story*     4 3 2 2 1982 295000 8000  234
 NYBCJohnson City                    JC 1 Circle Road
 Split-Entry*   4 2.5 3 2 1984 100000 2000 147
 PABRAthens                          AT 22 Autumn Gold Rd
-One-Story*    2 2 1 0 2000  45500 1700 721
+One-Story*    2 2 1 0 2000 45500 1700 721
 NYTCOwego                           OA 102 Ford St
-Log Cabin*    2 1 0 0 1984  62000 1850 180 
+Log Cabin*    2 1 0 0 1984 62000 1850 180 
 PABRTroy                            TR 1 Elm St
 One-Story*    3 1.5 1 1 1999 35450 600 369
 PABRSayre                           SA 432 W Lockhart St

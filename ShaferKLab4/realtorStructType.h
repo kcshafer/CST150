@@ -15,7 +15,7 @@
 struct realtorStructType {
 	string agentName;
 	houseClassType listings[30];
-	integer listingCount;
+	int listingCount;
 };
 
 #endif // !realtorStructType__h

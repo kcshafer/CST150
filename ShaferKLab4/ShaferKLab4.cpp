@@ -8,6 +8,9 @@ int main() {
 	ifstream inputFile;
 	ofstream outputFile;
 
+	//realtor struct type variable
+	realtorStructType realtor;
+
 	//END VARIABLE DECLARATION
 
 	OutputCourseHeading(cout);
@@ -17,7 +20,9 @@ int main() {
 	outputFile = OpenOutputFile("results.txt");
 
 	//read in the data from the input file
-	InputHomes(inputFile);
+	realtor = InputHomes(inputFile);
+	
+	realtor.listings[0].PrintHouse(outputFile);
 
 	//close the input and output files
 	inputFile.close();

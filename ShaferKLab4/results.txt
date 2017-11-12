@@ -1,0 +1,16 @@
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 
+     Listing Number:234
+              Style:Two-Story
+                                            State:NY
+                                           County:
+                                             City:Endicott    
+                                  School District:
+                                         Address: 14 Jewel Lane
+The following are the counts of the rooms
+                 Bedrooms4.0
+                Bathrooms3.0
+            Leisure Rooms2.0
+                                   Type of Garage:2
+                                       Year Built:1982
+                                            Price:295000.0
+                                           Taxes: 8000.0

@@ -11,7 +11,9 @@
 
 #include "Standards.h"
 #include "houseClassType.h";
+#include "realtorStructType.h"
 
-void InputHomes(ifstream& inputFile);
+realtorStructType InputHomes(ifstream& inputFile);
+houseClassType CreateListing(ifstream& inputFile);
 
 #endif // !FileProcessing__h
