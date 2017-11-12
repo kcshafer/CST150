@@ -1,6 +1,6 @@
 //--------------------------------------------------------------------------------------------------
 //Programmer's Name:  KC Shafer
-//File Name: Standards.cpp
+//File Name: houseClassType.cpp
 //Associated File:  houseClassType.h
 //Purpose: implement the member functions of houseClassType
 //--------------------------------------------------------------------------------------------------
