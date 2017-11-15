@@ -31,6 +31,9 @@ class houseClassType {
 		//constructor definition
 		houseClassType();
 
+		//destructor
+		~houseClassType();
+
 		//inline getters
 		string GetLocation() { return location; }
 		string GetStyle() { return style; }

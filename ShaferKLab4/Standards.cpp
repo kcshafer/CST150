@@ -14,6 +14,14 @@ void OutputMsg(ostream& out, string msg) {
 }
 
 //-------------------------------------------------------------------
+// OutputCenteredMsg - output centered message msg to passed file 
+//-------------------------------------------------------------------
+void OutputCenteredMsg(ofstream& outputFile, string msg) {
+	outputFile << setfill(' ') <<  setw((DIVIDER_WIDTH + msg.size()) / 2) << msg << endl;
+}
+
+
+//-------------------------------------------------------------------
 // Output Divider - output the standard dashed divider line to the 
 // passed by ref output stream
 //-------------------------------------------------------------------
@@ -27,6 +35,13 @@ void OutputDivider(ostream& out, char dividerChar) {
 //-------------------------------------------------------------------
 void OutputDivider(ofstream& outputFile, char dividerChar) {
 	outputFile << setfill(dividerChar) << setw(DIVIDER_WIDTH) << ' ' << setfill(' ') << endl;
+}
+
+//-------------------------------------------------------------------
+// OutputHalfDivider - output half length divider to output file
+//-------------------------------------------------------------------
+void OutputHalfDivider(ofstream& outputFile, char dividerChar) {
+	outputFile << setfill(dividerChar) << setw(DIVIDER_WIDTH / 2) << ' ' << setfill(' ') << endl;
 }
 
 //-------------------------------------------------------------------

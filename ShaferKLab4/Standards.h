@@ -17,14 +17,16 @@
 using namespace std;
 
 void OutputMsg(ostream& out, string msg);
+void OutputCenteredMsg(ofstream& outputFile, string msg);
 void OutputDivider(ostream& out, char dividerChar);
 void OutputDivider(ofstream& outputFile, char dividerChar);
+void OutputHalfDivider(ofstream& outputFile, char dividerChar);
 void OutputCourseHeading(ostream& out);
 ifstream OpenInputFile(string fileName);
 ofstream OpenOutputFile(string fileName);
 
 const int HEADING_WIDTH = 75;
-const int DIVIDER_WIDTH = 300;
+const int DIVIDER_WIDTH = 110;
 
 //Course heading constants
 const string COLLEGE = "SUNY Broome Community College";

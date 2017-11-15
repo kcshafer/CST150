@@ -23,7 +23,6 @@ realtorStructType InputHomes(ifstream& inputFile) {
 	
 	//input file processing loop
 	while(!inputFile.eof() && realtor.listingCount < 30) {
-		cout << "in loop" << endl;
 		realtor.listings[realtor.listingCount] = CreateListing(inputFile);
 		realtor.listingCount++;
 	}
@@ -47,9 +46,6 @@ houseClassType CreateListing(ifstream& inputFile) {
 	//retrieve location line from file and set on listing
 	getline(inputFile, tempStr);
 	listing.SetLocation(tempStr);
-
-	cout << "LOCATION TEMP -> " << tempStr << endl;
-	cout << "LOCATION CLASS -> " << listing.GetLocation() << endl;
 
 	//retrieve style from file and set on listing
 	getline(inputFile, tempStr, '*');
@@ -82,7 +78,6 @@ houseClassType CreateListing(ifstream& inputFile) {
 
 	//retrieve price and set on listing
 	getline(inputFile, tempStr, ' ');
-	cout << "PRICE -> " << tempStr << endl;
 	listing.SetPrice(stod(tempStr));
 
 	//retrieve taxes and set on listing

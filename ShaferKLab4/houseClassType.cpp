@@ -20,6 +20,13 @@ houseClassType::houseClassType() {
 	listingNumber    = 0;
 }
 
+//--------------------------------------------------------------------------------------------------
+// destructor - print the name of the object being destroyed to screen
+//--------------------------------------------------------------------------------------------------
+houseClassType::~houseClassType() {
+	cout << "Class instance of type houseClassType being destroyed" << endl;
+}
+
 // GETTERS
 
 //--------------------------------------------------------------------------------------------------
@@ -228,6 +235,10 @@ void houseClassType::PrintLocationData(ofstream& outputFile) {
 	//retrieve parsed location data
 	this->ExtractLocationData(state, countyCode, city, districtCode, address);
 
+	//set the county name and school district ? 
+	this->SetCountyName();
+	this->SetSchoolDistrictName();
+
 	//retrieve the full county name and school district name
 	county = this->GetCountyName();
 	schoolDistrict = this->GetSchoolDistrictName();
@@ -236,11 +247,11 @@ void houseClassType::PrintLocationData(ofstream& outputFile) {
 	outputFile << setfill(' ');
 
 	//output formatted values to file
-	outputFile << setw(50) << "State:" << state << endl;
-	outputFile << setw(50) << "County:" << county << endl;
-	outputFile << setw(50) << "City:"  << city << endl;
-	outputFile << setw(50) << "School District:" << schoolDistrict << endl;
-	outputFile << setw(50) << "Address: " << address << endl;
+	outputFile << "State:" << setw(45) << state << endl;
+	outputFile << "County:" << setw(44) << county << endl;
+	outputFile << "City:"  << setw(50) << city << endl;
+	outputFile << "School District:" << setw(35) << schoolDistrict << endl;
+	outputFile << "Address: " << setw(42) << address << endl;
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -248,31 +259,35 @@ void houseClassType::PrintLocationData(ofstream& outputFile) {
 //--------------------------------------------------------------------------------------------------
 void houseClassType::PrintRoomCounts(ofstream& outputFile) {
 	outputFile << "The following are the counts of the rooms" << endl;
-	outputFile << setw(25) << "Bedrooms" << this->roomCounts[0] << endl;
-	outputFile << setw(25) <<  "Bathrooms" << this->roomCounts[1] << endl;
-	outputFile << setw(25) <<  "Leisure Rooms" << this->roomCounts[2] << endl;
+	outputFile << "Bedrooms" << setw(20) << this->roomCounts[0] << endl;
+	outputFile << "Bathrooms" << setw(19) << this->roomCounts[1] << endl;
+	outputFile << "Leisure Rooms" << setw(15) << this->roomCounts[2] << endl;
 }
 //--------------------------------------------------------------------------------------------------
 // PrintHouse - print the house 
 //--------------------------------------------------------------------------------------------------
 void houseClassType::PrintHouse(ofstream& outputFile) {
-	OutputDivider(outputFile, '-');
+	OutputHalfDivider(outputFile, '-');
 
 	//output listing number and style
-	outputFile << setw(20) << "Listing Number:" << this->listingNumber << endl;
-	outputFile << setw(20) << "Style:" << this->style << endl;
+	outputFile << "Listing Number:" << setw(20) << this->listingNumber << endl;
+	outputFile << "Style:" << setw(30) << this->style << endl;
 
 	//output formatted location information
 	this->PrintLocationData(outputFile);
+
+	outputFile << endl;
 
 	//output formatted room counts
 	this->PrintRoomCounts(outputFile);
 
 	//output garage type, year built, price and taxes
-	outputFile << setw(50) << "Type of Garage:" << this->capacityOfGarage << endl;
-	outputFile << setw(50) << "Year Built:" << this->yearBuilt << endl;
-	outputFile << setw(50) << "Price:" << this->price << endl;
-	outputFile << setw(50) << "Taxes: " << this->taxes << endl;
+	outputFile << "Type of Garage:" << setw(36) << this->capacityOfGarage << endl;
+	outputFile << "Year Built:" << setw(40) << this->yearBuilt << endl;
+	outputFile << "Price:" << setw(45) << this->price << endl;
+	outputFile << "Taxes: " << setw(44) << this->taxes << endl;
+
+	OutputHalfDivider(outputFile, '-');
 }
 
 // END PRINT METHODS
