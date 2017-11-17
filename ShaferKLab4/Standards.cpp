@@ -17,9 +17,15 @@ void OutputMsg(ostream& out, string msg) {
 // OutputCenteredMsg - output centered message msg to passed file 
 //-------------------------------------------------------------------
 void OutputCenteredMsg(ofstream& outputFile, string msg) {
-	outputFile << setfill(' ') <<  setw((DIVIDER_WIDTH + msg.size()) / 2) << msg << endl;
+	OutputCenteredMsg(outputFile, msg, DIVIDER_WIDTH);
 }
 
+//-------------------------------------------------------------------
+// OutputCenteredMsg - output centered message msg to passed file 
+//-------------------------------------------------------------------
+void OutputCenteredMsg(ofstream& outputFile, string msg, int length) {
+	outputFile << setfill(' ') <<  setw((length + msg.size()) / 2) << msg << endl;
+}
 
 //-------------------------------------------------------------------
 // Output Divider - output the standard dashed divider line to the 
@@ -38,10 +44,24 @@ void OutputDivider(ofstream& outputFile, char dividerChar) {
 }
 
 //-------------------------------------------------------------------
+// Output Divider - output divider using passed length and character
+//-------------------------------------------------------------------
+void OutputDivider(ofstream& outputFile, char dividerChar, int dividerLength) {
+	outputFile << setfill(dividerChar) << setw(dividerLength) << ' ' << setfill(' ') << endl;
+}
+
+//-------------------------------------------------------------------
 // OutputHalfDivider - output half length divider to output file
 //-------------------------------------------------------------------
 void OutputHalfDivider(ofstream& outputFile, char dividerChar) {
-	outputFile << setfill(dividerChar) << setw(DIVIDER_WIDTH / 2) << ' ' << setfill(' ') << endl;
+	OutputHalfDivider(outputFile, dividerChar, DIVIDER_WIDTH);
+}
+
+//-------------------------------------------------------------------
+// OutputHalfDivider - output half length divider to output file
+//-------------------------------------------------------------------
+void OutputHalfDivider(ofstream& outputFile, char dividerChar, int fullLength) {
+	OutputDivider(outputFile, dividerChar, (fullLength / 2));
 }
 
 //-------------------------------------------------------------------

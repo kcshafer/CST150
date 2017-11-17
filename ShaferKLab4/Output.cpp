@@ -83,10 +83,10 @@ void SortListings(realtorStructType& realtor) {
 }
 
 //-------------------------------------------------------------------
-// OutputThreeBedroomListings - get three bedroom listings, output title
+// OutputListingsByBedroom - get (x) bedroom listings, output title
 // and pass to subset output function
 //-------------------------------------------------------------------
-void OutputThreeBedroomListings(ofstream& outputFile, realtorStructType realtor) {
+void OutputListingsByBedroom(ofstream& outputFile, realtorStructType realtor, int numBedrooms, string msg) {
 	//array to hold subset generated
 	houseClassType threeBedroomListings[30];
 	
@@ -108,20 +108,24 @@ void OutputThreeBedroomListings(ofstream& outputFile, realtorStructType realtor)
 
 		//check if bedrooms on listing is equal to 3
 		cout << "ROOM COUNT " << roomCounts[0] << endl;
-		if(roomCounts[0] == 3) {
+		if(roomCounts[0] == numBedrooms) {
 			threeBedroomListings[threeBedroomCount] = realtor.listings[index];
 			threeBedroomCount++;
 		}
 	}
 
 	//output report title
-	OutputDivider(outputFile, '-');
-	OutputCenteredMsg(outputFile, "The following homes have three bedrooms");
-	OutputDivider(outputFile, '-');
+	OutputDivider(outputFile, '*', 75);
+	OutputCenteredMsg(outputFile, msg, 75);
+	OutputDivider(outputFile, '*', 75);
 
 	OutputListingSubset(outputFile, threeBedroomListings, threeBedroomCount);
 
-	OutputDivider(outputFile, '-');
+	OutputDivider(outputFile, '~', 75);
+
+	outputFile << setfill(' ') << "Count Of Matches: " << setw(10) << (threeBedroomCount == 0 ? "No matches found " : to_string(threeBedroomCount)) << endl;
+
+	OutputDivider(outputFile, '~', 75);
 }
 
 //-------------------------------------------------------------------

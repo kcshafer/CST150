@@ -18,7 +18,7 @@ void OutputFormattedListingData(ofstream& outputFile, realtorStructType realtor,
 void SwapInstances(houseClassType& first, houseClassType& second);
 int IndexOfSmallest(houseClassType listings[30], int arraySize, int index);
 void SortListings(realtorStructType& realtor);
-void OutputThreeBedroomListings(ofstream& outputFile, realtorStructType realtor);
+void OutputListingsByBedroom(ofstream& outputFile, realtorStructType realtor, int numBedrooms, string msg);
 void OutputListingSubset(ofstream& outputFile, houseClassType listings[30], int listingsCount);
 
 #endif // !Output__h

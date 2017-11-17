@@ -265,7 +265,10 @@ int main() {
 	OutputFormattedListingData(outputFile, realtor, "Output of sorted listings");
 
 	//output three bedroom listings
-	OutputThreeBedroomListings(outputFile, realtor);
+	OutputListingsByBedroom(outputFile, realtor, 3, "The following listings have 3 bedrooms");
+	
+	//output four bedroom listings
+	OutputListingsByBedroom(outputFile, realtor, 4, "The following listings have 4 bedrooms");
 
 	//close the input and output files
 	inputFile.close();
