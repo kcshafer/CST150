@@ -15,5 +15,10 @@
 #include "realtorStructType.h"
 
 void OutputFormattedListingData(ofstream& outputFile, realtorStructType realtor, string msg);
+void SwapInstances(houseClassType& first, houseClassType& second);
+int IndexOfSmallest(houseClassType listings[30], int arraySize, int index);
+void SortListings(realtorStructType& realtor);
+void OutputThreeBedroomListings(ofstream& outputFile, realtorStructType realtor);
+void OutputListingSubset(ofstream& outputFile, houseClassType listings[30], int listingsCount);
 
 #endif // !Output__h

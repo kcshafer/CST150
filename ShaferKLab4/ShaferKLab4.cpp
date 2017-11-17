@@ -258,6 +258,14 @@ int main() {
 	//output the unsorted realtor & listing data
 	OutputFormattedListingData(outputFile, realtor, "Output of the data read in");
 
+	//sort listings by listing number
+	SortListings(realtor);
+
+	//output sorted listings
+	OutputFormattedListingData(outputFile, realtor, "Output of sorted listings");
+
+	//output three bedroom listings
+	OutputThreeBedroomListings(outputFile, realtor);
 
 	//close the input and output files
 	inputFile.close();

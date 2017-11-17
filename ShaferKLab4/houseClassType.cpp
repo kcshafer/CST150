@@ -33,9 +33,9 @@ houseClassType::~houseClassType() {
 // GetRoomCounts - set passed by reference array with values in room counts
 //--------------------------------------------------------------------------------------------------
 void houseClassType::GetRoomCounts(double roomCounts[]) {
-	roomCounts[0] = roomCounts[0];
-	roomCounts[1] = roomCounts[1];
-	roomCounts[2] = roomCounts[2];
+	roomCounts[0] = this->roomCounts[0];
+	roomCounts[1] = this->roomCounts[1];
+	roomCounts[2] = this->roomCounts[2];
 }
 
 // END GETTERS
