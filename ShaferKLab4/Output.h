@@ -20,5 +20,8 @@ int IndexOfSmallest(houseClassType listings[30], int arraySize, int index);
 void SortListings(realtorStructType& realtor);
 void OutputListingsByBedroom(ofstream& outputFile, realtorStructType realtor, int numBedrooms, string msg);
 void OutputListingSubset(ofstream& outputFile, houseClassType listings[30], int listingsCount);
+void HomeSold(ofstream& outputFile, realtorStructType& realtor, int listingNumber);
+int FindByListingNumber(int listingNumber, houseClassType listings[30], int listingCount);
+void AdjustListingArray(houseClassType listings[30], int listingCount, int removeIndex);
 
 #endif // !Output__h

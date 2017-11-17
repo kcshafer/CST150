@@ -6,7 +6,7 @@
 //Associated file:  houseClassType.cpp
 //Header contains
 // - houseClassType definition
-// - 
+// - functions involving houseClassType arrays
 //--------------------------------------------------------------------------------------------------
 
 #include "Standards.h"

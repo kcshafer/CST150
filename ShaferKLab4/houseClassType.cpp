@@ -303,3 +303,6 @@ void houseClassType::ExtractLocationData(string& state, string& countyCode, stri
 	districtCode = this->location.substr(36, 2);
 	address = this->location.substr(39);
 }
+
+
+

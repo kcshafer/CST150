@@ -141,3 +141,55 @@ void  OutputListingSubset(ofstream& outputFile, houseClassType listings[30], int
 		outputFile << endl;
 	}
 }
+
+// FUNCTIONS OPERATING ON houseClassType arrays
+void HomeSold(ofstream& outputFile, realtorStructType& realtor, int listingNumber) {
+	//int to store match of found listing
+	int listingMatch;
+
+	listingMatch = FindByListingNumber(listingNumber, realtor.listings, realtor.listingCount);
+
+	//output message if no match found
+	if(listingMatch == -1) {
+		outputFile << "No match found for listing number " << to_string(listingNumber) << endl;
+	} else {
+		realtor.listings[listingMatch].PrintHouse(outputFile);
+		realtor.listingCount--;
+		AdjustListingArray(realtor.listings, realtor.listingCount, listingMatch);
+	}
+}
+
+//--------------------------------------------------------------------------------------------------
+// FindByListingNumber - search listing array for match based on listing number, returning index
+// if found, -1 if no match found
+//--------------------------------------------------------------------------------------------------
+int FindByListingNumber(int listingNumber, houseClassType listings[30], int listingCount) {
+	//found listing index int
+	int listingMatch;
+	
+	//loop control variable
+	int index;
+
+	//init listing match to -1 (designating no match)
+	listingMatch = -1;
+
+	for(index = 0; index < listingCount && listingMatch == -1 && listings[index].GetListingNumber() <= listingNumber; index++) {
+		if(listings[index].GetListingNumber() == listingNumber) {
+			listingMatch = index;
+		}
+	}
+
+	return listingMatch;
+}
+
+//--------------------------------------------------------------------------------------------------
+// AdjustListingArray - remove instance at passed index, and move all other instances up in array
+//--------------------------------------------------------------------------------------------------
+void AdjustListingArray(houseClassType listings[30], int listingCount, int removeIndex) {
+	//loop control variable
+	int index;
+
+	for(index = removeIndex; index <= listingCount; index++) {
+		listings[index] = listings[index + 1];
+	}
+}

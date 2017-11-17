@@ -270,6 +270,15 @@ int main() {
 	//output four bedroom listings
 	OutputListingsByBedroom(outputFile, realtor, 4, "The following listings have 4 bedrooms");
 
+	//sell homes  123, 369, 180, 987, 850 
+	HomeSold(outputFile, realtor, 123);
+	HomeSold(outputFile, realtor, 369);
+	HomeSold(outputFile, realtor, 180);
+	HomeSold(outputFile, realtor, 987);
+	HomeSold(outputFile, realtor, 850);
+
+	OutputFormattedListingData(outputFile, realtor, "Output of updated listings");
+
 	//close the input and output files
 	inputFile.close();
 	outputFile.close();
